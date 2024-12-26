@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/learn_html/form_folder/indexf.html" method="get" autocomplete="on">
+        <fieldset>
+            <legend>personal data</legend>
+    <label for="fname">firstname</label>
+    <input type="text" id="fname" name="fname" value="raju" autofocus ><br><br>
+    <label for="lname">lastname</label>
+    <input type="text" id="lname" name="lname" value="rastogi" readonly><br><br>
+    <label for="pin">pincode</label>
+    <input type="number" id="pin" name="pin" size="6" required><br><br>
+    <label for="mail">email</label>
+    <input type="email" id="mail"><br><br>
+    <label for="birthday">DOB</label>
+    <input type="date" id="birthday"><br><br>
+    <label for="no.">phone no.</label>
+    <input type="tel" id="no." name="no." maxlength="15" pattern="number">
+ 
+</fieldset>
+    <br><br>
+
+    <label for="Fi">select a file</label>
+<input type="file" id="Fi" name="file" multiple><br><br>
+
+    <label for="stream">choose stream</label>
+    <select id="stream" name="stresms">
+        <optgroup label="BCA">
+            <option value="data-science"> data-science</option>
+            <option value="full-stack">full-stack</option>
+        </optgroup>
+        <optgroup label="B-TECH">
+            <option value="CS">CS</option>
+            <option value="Electrical">Electrical</option>
+            <option value="mechanical">mechanical</option>
+        </optgroup>
+    </select>
+
+    <br><br>
+
+    <p><label for="para">about yourself</label></p>
+    <textarea id="para" name="paragraph" rows="4" cols="50"></textarea>
+    <br><br>
+
+    <label for="cast"> select Cast</label>
+    <input list="cast" name="cast" id="cast" >
+    <datalist id="cast">
+        <option value="genral"></option>
+        <option value="OBC"></option>
+        <option value="SC"></option>
+        <option value="ST"></option>
+    </datalist>
+
+<br><br>
+    <button type="button">click here</button>
+
+<input type="submit" value="submit">
+
+</form>
+</body>
+</html>
