@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" method="get" style="border: 2px solid black;" >
+<h3>Personal information</h3>
+<label for="fname">first name:</label>
+<input type="text" id="fname" name="fname" maxlength="20" autofocus required><br><br>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" maxlength="20" required><br><br>
+
+<label for="dob">Date of birth:</label>
+<input type="date"  id="dob" name="dob"  required><br><br>
+
+<label >Gender:</label>
+<input list="G" name="gender" placeholder="select your gender" required>
+<datalist id="G"> 
+    <option value="Male"></option>
+    <option value="Female"></option>
+    <option value="Others"></option>
+</datalist><br><br>
+
+
+<h3>Account Information</h3>
+
+<label for="mail">Email:</label>
+<input type="email" id="mail" required><br>
+(your email address will be your username)
+<br><br>
+<label for="mail">Re-type Email:</label>
+<input type="email" id="mail" required><br>
+(min 8 characters, 1 number, case-sensitive)
+<br><br>
+
+<label >Security Question</label>
+<input list="Q" name="Question" placeholder="Choose a security Question" size="25" required>
+<datalist id="Q">
+    <option value="color">What is your fav. color</option>
+    <option value="sports">What is yopur fav. sports</option>
+    <option value="actor">who is your fav. actor</option>
+    <option value="passion">what you love most?</option>
+</datalist><br><br>
+
+<label for="answer">Security Answer</label>
+<input id="answer" name="answer" value=""required><br>
+(not case-sensitive)
+<br><br>
+
+<h3>Contact Information</h3>
+<label for="address">Address:</label>
+<input name="text" id="address" maxlength="50"required><br><br>
+
+<label for="city">City:</label>
+<input type="text" id="city"required><br><br>
+
+<label >State:</label>
+<input  list="state" name="state" placeholder="Choose a state" required>
+<datalist id="state">
+    <option value="Andhra pradesh"></option>
+    <option value="Utter Pradesh"></option>
+    <option value="Rajasthan"></option>
+    <option value="Udttrakhand"></option>
+</datalist><br><br>
+
+<label for="code">Zip Code</label>
+<input type="text" id="code" name="code" >
+<input type="text" placeholder="optional" disabled size="6"><br><br>
+
+<label for="no.">Phone:</label>
+<input type="tel" id="no." name="no." required>
+<input list="mobile" name="mobile" placeholder="mobile" required>
+<datalist id="mobile">
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+</datalist><br>
+No spaces or Dashes
+<br><br>
+
+<input type="submit" name="submit">
+        </form>
+    </body>
+    </html>
+</body>
+</html>
