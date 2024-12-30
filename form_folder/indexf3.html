@@ -14,45 +14,47 @@
         <title>Document</title>
     </head>
     <body>
-        <form action="" method="get" style="border: 2px solid black;" >
+        <form  action="" name="hello" method="get" style="border: 2px solid black;" >
 <h3>Personal information</h3>
 <label for="fname">first name:</label>
-<input type="text" id="fname" name="fname" maxlength="20" autofocus required><br><br>
+<input type="text" id="fname" name="fname" value="" maxlength="20" autofocus required><br><br>
 
 <label for="lname">Last name:</label>
-<input type="text" id="lname" name="lname" maxlength="20" required><br><br>
+<input type="text" id="lname" name="lname" value="" maxlength="20" required><br><br>
 
 <label for="dob">Date of birth:</label>
-<input type="date"  id="dob" name="dob"  required><br><br>
+<input type="date"  id="dob" name="dob" value=""  ><br><br>
 
-<label >Gender:</label>
-<input list="G" name="gender" placeholder="select your gender" required>
-<datalist id="G"> 
-    <option value="Male"></option>
-    <option value="Female"></option>
-    <option value="Others"></option>
-</datalist><br><br>
+<label for="G">Gender:</label>
+<!-- <input list="G" name="gender" placeholder="select your gender" required> -->
+<select name="gender" id="G"> 
+    <option value="">Select a gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Others">Others</option>
+</select><br><br>
 
 
 <h3>Account Information</h3>
 
 <label for="mail">Email:</label>
-<input type="email" id="mail" required><br>
+<input type="email" id="mail" name="email" value="" required><br>
 (your email address will be your username)
 <br><br>
 <label for="mail">Re-type Email:</label>
-<input type="email" id="mail" required><br>
+<input type="email" id="mail" name="reemail" value="" required><br>
 (min 8 characters, 1 number, case-sensitive)
 <br><br>
 
-<label >Security Question</label>
-<input list="Q" name="Question" placeholder="Choose a security Question" size="25" required>
-<datalist id="Q">
-    <option value="color">What is your fav. color</option>
+<label for="Ques">Security Question</label>
+<!-- <input name="Question" id="Ques" value="Ques" required> -->
+<select name="Ques" id="Ques"  >
+    <option value="" >Select a Question</option>
+    <option value="color" >What is your fav. color</option>
     <option value="sports">What is yopur fav. sports</option>
     <option value="actor">who is your fav. actor</option>
-    <option value="passion">what you love most?</option>
-</datalist><br><br>
+    <option  value="passion">what you love most?</option>
+</select><br><br>
 
 <label for="answer">Security Answer</label>
 <input id="answer" name="answer" value=""required><br>
@@ -61,38 +63,123 @@
 
 <h3>Contact Information</h3>
 <label for="address">Address:</label>
-<input name="text" id="address" maxlength="50"required><br><br>
+<input type="text" name="address" id="address" value="" maxlength="50"required><br><br>
 
 <label for="city">City:</label>
-<input type="text" id="city"required><br><br>
+<input type="text" id="city" name="city" value="" required><br><br>
 
-<label >State:</label>
-<input  list="state" name="state" placeholder="Choose a state" required>
-<datalist id="state">
-    <option value="Andhra pradesh"></option>
-    <option value="Utter Pradesh"></option>
-    <option value="Rajasthan"></option>
-    <option value="Udttrakhand"></option>
-</datalist><br><br>
+<label for="state">State:</label>
+<!-- <input  list="state" name="state" placeholder="Choose a state" required> -->
+<select id="state" name="state">
+    <option value="">Choose a state</option>
+    <option value="Andhra pradesh">Andhra pradesh</option>
+    <option value="Utter Pradesh">Utter Pradesh</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Uttrakhand">Uttrakhand</option>
+</select><br><br>
 
 <label for="code">Zip Code</label>
-<input type="text" id="code" name="code" >
+<input type="text" id="code" name="code" value="" >
 <input type="text" placeholder="optional" disabled size="6"><br><br>
 
 <label for="no.">Phone:</label>
-<input type="tel" id="no." name="no." required>
-<input list="mobile" name="mobile" placeholder="mobile" required>
-<datalist id="mobile">
+<input type="tel" id="no." name="no" value="" required>
+<input list="mobile" name="mobile" placeholder="mobile" disabled>
+<select id="mobile" disabled>
     <option value=""></option>
     <option value=""></option>
     <option value=""></option>
-</datalist><br>
+</select><br>
 No spaces or Dashes
 <br><br>
 
 <input type="submit" name="submit">
         </form>
-    </body>
-    </html>
+    <script>
+        // window.location.search = user
+    </script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search)
+        console.log(params.get('fname'));
+        console.log(params.get('lname'));
+        console.log(params.get('dob'));
+        console.log(params.get('gender'));
+        console.log(params.get('email'));
+        console.log(params.get('reemail'));
+        console.log(params.get('Ques'));
+        console.log(params.get('answer'));
+        console.log(params.get('address'));
+        console.log(params.get('city'));
+        console.log(params.get('state'));
+        console.log(params.get('code'));
+        console.log(params.get('no'));
+
+        // params.get('gender');
+
+        let form = document.forms.hello;
+
+        let elem = form.elements.fname;
+        elem.value = params.get('fname');
+
+        let lastname= form.elements.lname;
+        lastname.value = params.get('lname');
+
+        let date = form.elements.dob;
+        date.value = params.get('dob');
+
+        let gender = form.elements.gender;
+        gender.value = params.get('gender');
+
+        let mail = form.elements.email;
+        mail.value = params.get('email');
+
+        let remail = form.elements.reemail;
+        remail.value = params.get('reemail');
+
+        let question= form.elements.Ques;
+        Ques.value = params.get('Ques');
+
+        let answer = form.elements.answer;
+        answer.value = params.get('answer');
+
+        let address = form.elements.address;
+        address.value = params.get('address');
+
+        let city = form.elements.city;
+        city.value = params.get('city');
+
+        let state = form.elements.state;
+        state.value = params.get('state');
+
+        let code = form.elements.code;
+        code.value = params.get('code');
+
+        let number = form.elements.no;
+        number.value = params.get('no');
+
+
+     
+
+
+        // let elem2 = form.elements.lname;
+        // let elem3 = form.elements.gender;
+        // let genderElems = form.elements.gender;
+
+        // console.log(elem.value);
+        // console.log(lnameElems[0]);
+
+        // name.value = params.get('fname');
+        // name.value = params.get('lname');
+        // name.value = params.get('gender');
+
+
+        // console.log(fname.type);
+        // console.log(fname.name);
+        // console.log(fname.id);
+        // console.log(fname.value);
+        // console.log(fname.required);
+        // console.log(fname.autofocus);
+    </script>
 </body>
 </html>
