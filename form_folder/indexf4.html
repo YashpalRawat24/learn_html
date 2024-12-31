@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get" style="border: 2px solid black; width: 550px;" >
+
+    <label for="mail">E-mail:</label>
+    <input  type="email" id="mail" name="email" value=""><br><br>
+
+    <label for="pw">password:</label>
+    <input type="password" id="pw" name="password" value="" ><br><br>
+
+    <input type="checkbox" id="terms" name="term" value="selected">
+    <label for="terms">terms & condition</label><br><br>
+
+    <input type="submit" name="submit">
+
+</form>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+console.log(params.get('email'));
+console.log(params.get('password'));
+console.log(params.get("terms"));
+
+
+    let form = document.forms[0];
+
+    let mail = form.elements.email;
+    mail.value = params.get('email');
+
+    let passwords = form.elements.password;
+    passwords.value = params.get('password');
+
+//   let Term  = form.elements.term;
+//   Term.value = params.get('term'); 
+    terms.checked = true;
+
+    // console.log(document.forms[0].elements.email.value);
+
+    
+</script>
+</body>
+</html>

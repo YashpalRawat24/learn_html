@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get" style="border: 2px solid black;">
+
+        <label for="fname">Full-name:</label>
+        <input type="text" id="fname" name="fname" value="" autofocus><br><br>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="email" value=""><br><br>
+
+        <label for="no">Phone No. :</label>
+        <input type="tel" id="no" name="num" value=""><br><br>
+
+        <!-- <p>select a gender:</p>
+        <input type="radio" id="genders" name="gender" value="Male">
+        <label for="genders">Male</label><br>
+       
+        <input type="radio" id="genders" name="gender" value="Female">
+        <label for="genders">Female</label><br>
+       
+        <input type="radio" id="genders" name="gender" value="others">
+        <label for="genders">Others</label> -->
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" name="gender" value="Male">Male
+        <input type="radio" id="gender" name="gender" value="Female">Female
+        <input type="radio" id="gender" name="gender" value="Others">Others <br><br>
+
+        <!-- <p>Graduation</p>
+        <input type="checkbox" id="edu" name="education" value="10th">
+        <label for="edu">10th:</label><br>
+        <input type="checkbox" id="edu" name="education" value="12th">
+        <label for="edu">12th:</label><br>
+        <input type="checkbox" id="edu" name="education" value="Graduation">
+        <label for="edu">1Graduation:</label><br>
+        <input type="checkbox" id="edu" name="education" value="Post graduation">
+        <label for="edu">Post graduation:</label> -->
+
+        <label for="edu">Education:</label>
+        <input type="checkbox" id="edu" name="edu" value="10th">10th
+        <input type="checkbox" id="edu" name="edu" value="12th">12th
+        <input type="checkbox" id="edu" name="edu" value="Graduation">Graduation
+        <input type="checkbox" id="edu" name="edu" value="Post Graduation">Post Graduation <br><br>
+
+        <label for="lang">Language:</label>
+        <select id="lang" name="lang">
+            <option value="select a language">Select a language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Telgu">Telgu</option>
+            <option value="Kannada">Kannada</option>
+            <option value="Malyalam">Malyalam</option>
+            <option value="Bengally">Bengally</option>
+        </select><br><br>
+
+        <label for="color">color:</label>
+        <select id="color" name="color">
+            <option value="select a color" >select a color</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow"</option>
+            <option value="Orange">Orange</option>
+            <option value="Grey">Grey</option>
+            <option value="Black">Black</option>
+        </select>
+
+        <br><br>
+        <input type="submit" name="submit">
+    </form>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+        console.log(params.get('fname'))
+        console.log(params.get('email'))
+        console.log(params.get('num'))
+        console.log(params.get('gender'))
+        console.log(params.get('edu'))
+        console.log(params.get('lang'))
+        console.log(params.get('color'))
+
+        //  console.log(document.forms[0].elements.gender[1].value);
+
+
+        let form = document.forms[0];
+
+        let name = form.elements.fname;
+        name.value = params.get('fname');
+
+        let Mail = form.elements.email;
+        Mail.value = params.get('email');
+
+        let No = form.elements.num;
+        No.value = params.get('num');
+
+        let genders = form.elements.gender;
+        genders.value = params.get('gender');
+        // gender.checked = true;
+
+
+        // let education = form.elements.edu;
+        // education.value = params.get('edu');
+        edu.checked = true;
+
+        let language = form.elements.lang;
+        language.value = params.get('lang');
+        //    lang.options[3].selected = true;
+        //    lang.value = 'English';
+
+        let Color = form.elements.color;
+        Color.value = params.get('color');
+        // color.value = 'Grey';
+
+    </script>
+</body>
+
+</html>

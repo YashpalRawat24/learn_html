@@ -1,83 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
-<form>
-<label for="se">search here</label>
-<input type="search" id="se" placeholder="search"><br><br>
+    <form>
+        <label for="se">search here</label>
+        <input type="search" id="se" placeholder="search"><br><br>
 
-<label for="N">Username:</label>
-<input type="text" id="N" name="username" placeholder="Entdr your username"><br>
+        <label for="N">Username:</label>
+        <input type="text" id="N" name="username" placeholder="Entdr your username"><br>
 
-<label for="Pass">Password:</label>
-<input type="password" id="Pass" name="password" ><br>
+        <label for="Pass">Password:</label>
+        <input type="password" id="Pass" name="password"><br>
 
-<p>Select your gender</p>
-<input type="radio" id="M" name="gender" value="Male">
-<label id="M">Male</label><br>
-<input type="radio" id="F" name="gender" value="Female">
-<label for="F">Female</label><br>
+        <p>Select your gender</p>
+        <input type="radio" id="M" name="gender" value="Male">
+        <label id="M">Male</label><br>
+        <input type="radio" id="F" name="gender" value="Female">
+        <label for="F">Female</label><br>
 
-<p>subjects</p>
-<input type="checkbox" id="Ms" name="subject" value="Maths">
-<label for="Ms">Maths</label><br>
-<input type="checkbox" id="DB" name="subject" value="DBMS">
-<label for="DB">DBMS</label><br>
-<input type="checkbox" id="C" name="subject" value="C++">
-<label for="C">C++</label><br>
-<input type="checkbox" id="Py" name="subject" value="Python">
-<label for="Py">Python</label><br><br>
+        <p>subjects</p>
+        <input type="checkbox" id="Ms" name="subject" value="Maths">
+        <label for="Ms">Maths</label><br>
+        <input type="checkbox" id="DB" name="subject" value="DBMS">
+        <label for="DB">DBMS</label><br>
+        <input type="checkbox" id="C" name="subject" value="C++">
+        <label for="C">C++</label><br>
+        <input type="checkbox" id="Py" name="subject" value="Python">
+        <label for="Py">Python</label><br><br>
 
-<label for="aa">enter your age:</label>
-<input type="number" id="aa" value="number" min="16" max="30"><br><br>
+        <label for="aa">enter your age:</label>
+        <input type="number" id="aa" name="number" value="" min="16" max="30"><br><br>
 
-<label for="img">Add your image</label><br>
-<input type="image" id="img" src="/learn_html/naruto.png" width="150px"><br><br>
+        <label for="img">Add your image</label><br>
+        <input type="image" id="img" src="/learn_html/naruto.png" width="150px"><br><br>
 
-<label for="Fi">select a file</label>
-<input type="file" id="Fi"><br><br>
+        <label for="Fi">select a file</label>
+        <input type="file" id="Fi"><br><br>
 
-<label for="mail">Enter your E-mail</label>
-<input type="email" id="mail"><br><br>
+        <label for="mail">Enter your E-mail</label>
+        <input type="email" id="mail"><br><br>
 
-<label for="dob">enter your DOB</label>
-<input type="date" id="dob"><br><br>
+        <label for="dob">enter your DOB</label>
+        <input type="date" id="dob"><br><br>
 
-<label for="DL">filling timing</label>
-<input type="datetime-local" id="DL"><br><br>
+        <label for="DL">filling timing</label>
+        <input type="datetime-local" id="DL"><br><br>
 
-<label for="co">fFav. color</label>
-<input type="color" id="co"><br><br>
+        <label for="co">fFav. color</label>
+        <input type="color" id="co"><br><br>
 
-<label for="mo">Enter admission month</label>
-<input type="month" id="mo"><br><br>
+        <label for="mo">Enter admission month</label>
+        <input type="month" id="mo"><br><br>
 
-<label for="pho">enter phone no.</label>
-<input type="tel" id="pho"><br><br>
+        <label for="pho">enter phone no.</label>
+        <input type="tel" id="pho"><br><br>
 
-<label for="ti">enter current time</label>
-<input type="time" id="ti"><br><br>
+        <label for="ti">enter current time</label>
+        <input type="time" id="ti"><br><br>
 
-<label for="ur">enter the URL</label>
-<input type="url" id="ur" placeholder="URL"><br><br>
+        <label for="ur">enter the URL</label>
+        <input type="url" id="ur" placeholder="URL"><br><br>
 
-<label for="we">select the week</label>
-<input type="week" id="we"><br><br>
+        <label for="we">select the week</label>
+        <input type="week" id="we"><br><br>
 
-<label for="rg">range</label>
-<input type="range" id="rg" min="0" max="100"><br><br>
+        <label for="rg">range</label>
+        <input type="range" id="rg" min="0" max="100"><br><br>
 
 
-<input type="submit" value="Submit Form">
-<input type="button" value="button">
-<input type="reset" value="reset">
-<!-- <button type="submit">Submit Form</button><br><br> -->
+        <input type="submit" value="Submit Form">
+        <input type="button" value="button">
+        <input type="reset" value="reset">
+        <!-- <button type="submit">Submit Form</button><br><br> -->
 
-</form>
+    </form>
+    <script>
+
+        let form = document.forms[0];
+        let genders = form.elements.gender;
+        console.log(genders[1].value);
+        // console.log(document.forms[0].elements.gender[1].value);
+    </script>
 </body>
+
 </html>
